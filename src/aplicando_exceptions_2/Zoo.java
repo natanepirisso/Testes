@@ -9,27 +9,13 @@ import java.util.Scanner;
 
 
 public class Zoo {
-    static ArrayList<Animal> animalsList = new ArrayList<>();
-    static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) {
-        interfaceZoo();
+    private ArrayList<Animal> animalsList;
+    private Scanner sc;
+    public Zoo(){
+        this.animalsList = new ArrayList<>();
+        this.sc = new Scanner(System.in);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public static void addCategoria(){
+    private void addCategoria(){
         while(true){
             try{
                 System.out.println("Qual o nome da Categoria do Animal?");
@@ -49,13 +35,13 @@ public class Zoo {
 
         }
     }
-    public static void listarCategoria(){
+    private void listarCategoria(){
         System.out.println("----------- Lista de Animais --------------\n");
         for(Animal p : animalsList){
             System.out.println("Animal: "+ p.especie + " | Quantidade: " + p.qntd + "| ID: " + p.getID());
         }
     }
-    public static void interfaceZoo(){
+    public void run(){
         int inputPicker;
         do{
             System.out.println("\nDigite:");
